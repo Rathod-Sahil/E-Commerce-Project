@@ -1,0 +1,39 @@
+spring:
+    application:
+        name: E-Commerce-project
+
+    data:
+        mongodb:
+            uri: mongodb://localhost:27017
+            database: E-Commerce
+
+    mail:
+        host: smtp.gmail.com
+        port: 587
+        username: kira3092650@gmail.com
+        password: aqngcvjpnusuyrwe
+        properties:
+            mail:
+                smtp:
+                    auth: true
+                    starttls:
+                        enable: true
+    
+    rabbitmq:
+        host: localhost
+        username: guest
+        password: guest
+        queue:
+            name: emailQueue
+        template:
+            exchange: emailExchange
+            routing-key: emailRoutingKey
+
+logging:
+  level:
+    org:
+      springframework:
+        data:
+          mongodb:
+            core:
+              MongoTemplate: DEBUG
